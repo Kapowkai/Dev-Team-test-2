@@ -1,0 +1,76 @@
+
+<% var title = 'Authentication Example' %>
+<% var message = 'error message' %>
+<% include head %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header">Login</div>
+
+        <div class="card-body">
+          <form method="post" action="/login">
+
+            <div class="form-group row">
+              <label for="email" class="col-md-4 col-form-label text-md-right">Email address</label>
+
+              <div class="col-md-6">
+                <input id="email" type="text" class="form-control @error('email') is-invalid " name="email" placeholder="admin@gmail.com" required autocomplete="email" autofocus>
+                <span class="invalid-feedback" role="alert">
+                  <strong><%- message %></strong>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+              <div class="col-md-6">
+                <input id="password" type="password" class="form-control @error('password') is-invalid " name="password" required autocomplete="current-password">
+
+                <span class="invalid-feedback" role="alert">
+                  <strong><%- message %></strong>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-6 offset-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="remember" id="remember">
+
+                  <label class="form-check-label" for="remember">
+                    Remember Me
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row mb-0">
+              <div class="col-md-8 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                  Login
+                </button>
+
+                <a class="btn btn-link" href="/register">
+                  Register now
+                </a>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</body>
+</html>
+
+<% include foot %>

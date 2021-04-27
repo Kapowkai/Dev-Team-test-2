@@ -1,0 +1,48 @@
+<% include head %>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <div class="d-flex justify-content-between">
+                                <div class="h4">Create book in db</div>
+                            </div>
+                        </h5>
+                        <form action="<%= action %>" method="post">
+
+                            <% if (fields.length) { %>
+                                <% fields.forEach(function(field){ %>
+                                    <label><%= field.name %></label>
+                                    <input class="form-control" type="<%= field.type %>" name="<%= field.name %>" <% if (field.property) { %> <%= field.property %> <% } %> >
+                                <% }) %>
+                            <% } %>
+
+                            <button type="submit" class="btn btn-primary pl-5 pr-5 mt-3"><%= title %></button> <!--Title for button is same as that of the page-->
+                        </form>
+
+<!--                        <form action="/api/create-data" method="post">-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="bookName">ชื่อหนังสือ</label>-->
+<!--                                <input type="text" class="form-control" id="bookName" v-model="bookName" value="" required>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <label for="writerName">แต่งโดย</label>-->
+<!--                                <input type="text" class="form-control col-md-8" id=writerName" v-model="writerName" required>-->
+<!--                                <label for="price">ราคา</label>-->
+<!--                                <input type="text" class="form-control col-md-2" id="price" v-model="price" required>-->
+<!--                                <label for="page">จำนวนหน้า</label>-->
+<!--                                <input type="text" class="form-control col-md-2" id="page" v-model="page" required>-->
+<!--                            </div>-->
+<!--                            <button type="submit" class="btn btn-primary pl-5 pr-5" @click="submit">ADD</button>-->
+<!--                        </form>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="create.js" type="text/javascript"></script>
+
+<% include foot %>
